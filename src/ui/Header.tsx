@@ -8,7 +8,7 @@ import { ThemeContext } from "../Context/ThemeContext";
 export default function Header() {
   const { dark, toggleTheme } = useContext(ThemeContext);
   return (
-    <header className="flex items-center justify-between border border-blue-700">
+    <header className="flex items-center justify-between ">
       <Link to={"/"}>
         <img src={NameLogo} style={{ height: "8rem" }} />
       </Link>

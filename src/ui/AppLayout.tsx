@@ -1,3 +1,4 @@
+import { Link, Outlet } from "react-router-dom";
 import { useContext } from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
@@ -13,11 +14,13 @@ export default function AppLayout() {
       }
     >
       <Header />
-      <div className=" my-36 mx-20 flex gap-12 h-[110vh]">
+      <div className=" my-36 mx-20 flex  gap-8 h-[110vh]">
         <Sidebar />
-        <div className="w-2/3 bg-white rounded-2xl drop-shadow-sm">
+        <div className="w-2/3  rounded-2xl drop-shadow-sm flex justify-start items-center flex-col">
           <Navbar />
-          <div></div>
+          <div className="mt-6 h-full border w-full rounded-lg bg-slate-100">
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>

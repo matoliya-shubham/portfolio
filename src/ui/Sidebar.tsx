@@ -44,14 +44,13 @@ export default function Sidebar() {
       >
         <img src="src/assets/profile-pic.png" className="w-[96%]" />
       </div>
-      <div className="mt-36 w-[90%] h-full">
+      <div className="mt-28 w-[90%] flex justify-center flex-col items-center">
         <h1
           className={[
             "text-3xl",
             "text-center",
             "font-bold",
-            "text-gray-600",
-            dark ? "text-gray-200" : "",
+            dark ? "text-gray-200" : "text-gray-600",
           ].join(" ")}
         >
           Shubham Matoliya
@@ -63,13 +62,13 @@ export default function Sidebar() {
             "text-gray-400",
             "inline-block",
             dark
-              ? " py-1 ml-[27%]  inline-block px-3 bg-[#1D1D1D] rounded-md"
-              : "ml-[30%] text-lg ",
+              ? " py-1  inline-block px-3 bg-[#1D1D1D] rounded-md"
+              : "text-lg ",
           ].join(" ")}
         >
           Full Stack developer
         </h3>
-        <div className="flex justify-center align-middle gap-3 mt-8">
+        <div className="flex justify-center align-middle  gap-3 mt-8">
           <Link to={"/"}>
             <Button
               buttonType="social"

@@ -1,25 +1,29 @@
 import { Link } from "react-router-dom";
 import { CiLight } from "react-icons/ci";
 import { IoMoonOutline } from "react-icons/io5";
-import NameLogo from "../assets/Shubham.svg";
+import NameLogoDark from "../assets/logo-dark.png";
+import NameLogoLight from "../assets/logo-light.png";
 import { useContext } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 
 export default function Header() {
   const { dark, toggleTheme } = useContext(ThemeContext);
   return (
-    <header className="w-full flex items-center justify-between ">
-      <Link to={"/"}>
-        <img src={NameLogo} style={{ height: "8rem" }} />
+    <header className="flex w-full items-center justify-between ">
+      <Link className="py-3" to={"/"}>
+        <img
+          src={dark ? NameLogoDark : NameLogoLight}
+          className={`ml-28 h-24 -rotate-1 transform `}
+        />
       </Link>
       <button
-        className="justify-center gap-2 flex items-center mr-32 rounded-full  p-1 hover:bg-[#dd2455] hover:text-white"
+        className="mr-32 flex items-center justify-center gap-2 rounded-full  p-1 hover:bg-[#dd2455] hover:text-white"
         onClick={toggleTheme}
       >
         {dark ? (
-          <CiLight className="text-white w-10 h-10" />
+          <CiLight className="h-10 w-10 text-white" />
         ) : (
-          <IoMoonOutline className="w-8 h-8" />
+          <IoMoonOutline className="h-8 w-8" />
         )}
       </button>
     </header>

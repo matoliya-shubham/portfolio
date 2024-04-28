@@ -13,7 +13,6 @@ export default function Button({
   background,
   isActive,
 }: ButtonProp) {
-  console.log("active is ", isActive);
   const { dark } = useContext(ThemeContext);
   let buttonClass = "";
   switch (buttonType) {
@@ -22,13 +21,13 @@ export default function Button({
       break;
     }
     case "navButton": {
-      buttonClass = `py-4 w-[100%] flex justify-center items-center flex-col gap-1 rounded-xl 
+      buttonClass = `py-4 w-[100%] justify-center flex items-center flex-col gap-1 rounded-xl 
       ${isActive ? (dark ? "active-dark" : "active-light") : ""}
       ${dark ? "hover-dark" : "hover-light"}`;
       break;
     }
     case "download": {
-      buttonClass = `py-3 px-10 mt-12 ${
+      buttonClass = `py-3 px-10 mt-5 ${
         background || ""
       } flex justify-center gap-3 bg-gradient-to-r from-pink-600 to-orange-600 text-white rounded-2xl text-xl`;
       break;

@@ -44,7 +44,7 @@ export default function Navbar() {
       }  rounded-lg flex justify-center items-center shadow-sm`}
     >
       {navButtons.map(({ path, text, icon }) => (
-        <NavLink to={path} className={"w-[15%]"}>
+        <NavLink to={path} className={"w-[15%]"} preventScrollReset={true}>
           {({ isActive }) => (
             <Button isActive={isActive} buttonType="navButton">
               {icon}
@@ -53,34 +53,6 @@ export default function Navbar() {
           )}
         </NavLink>
       ))}
-      {/* <Button isActive buttonType="navButton">
-              
-            </Button> */}
-
-      {/* <NavLink to={"/resume"} className={"w-[15%]"}>
-        <Button buttonType="navButton">
-          <TiDocumentText className={`w-6 h-6`} />
-          <p>Resume</p>
-        </Button>
-      </NavLink>
-      <NavLink to={"/work"} className={"w-[15%]"}>
-        <Button buttonType="navButton">
-          <MdWorkHistory className={`w-6 h-6`} />
-          <p>Work</p>
-        </Button>
-      </NavLink>
-      <NavLink to={"/portfolio"} className={"w-[15%]"}>
-        <Button buttonType="navButton">
-          <FaBlogger className={`w-6 h-6`} />
-          <p>Blogs</p>
-        </Button>
-      </NavLink>
-      <NavLink to={"/contact"} className={"w-[15%]"}>
-        <Button buttonType="navButton">
-          <RiContactsBookLine className={`w-6 h-6`} />
-          <p>Contact</p>
-        </Button>
-      </NavLink> */}
     </div>
   );
 }

@@ -4,10 +4,10 @@ type ThemeContextType = {
   dark: boolean;
   toggleTheme: () => void;
 };
-const ThemeContext = createContext<ThemeContextType | null>(null);
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const ThemeContextProvider = ({ children }: React.PropsWithChildren) => {
-  const [dark, setDark] = useState<boolean>(false);
+  const [dark, setDark] = useState<boolean>(true);
 
   const toggleTheme = () => {
     setDark((dark) => !dark);

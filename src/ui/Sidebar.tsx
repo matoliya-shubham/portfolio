@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import Button from "./components/Button";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -14,13 +14,59 @@ import { FaDownload } from "react-icons/fa";
 
 export default function Sidebar() {
   const { dark } = useContext(ThemeContext);
+  const socialButtons = useMemo(
+    () => [
+      {
+        pathname: "https://www.linkedin.com/in/shubham-matoliya/",
+        icon: (
+          <FaLinkedinIn
+            className={`w-4 h-4 ${
+              dark ? "text-blue-700" : "text-blue-600"
+            } hover:text-pink-700 `}
+          />
+        ),
+      },
+      {
+        pathname: "https://twitter.com/Shubhammatoliy4",
+        icon: (
+          <FaXTwitter
+            className={` w-4 h-4 ${
+              dark ? "text-gray-100" : "text-gray-900"
+            } hover:text-pink-700`}
+          />
+        ),
+      },
+      {
+        pathname: "https://github.com/matoliya-shubham",
+        icon: (
+          <FiGithub
+            className={`w-4 h-4 ${
+              dark ? "text-gray-100" : "text-gray-900"
+            } hover:text-pink-700 `}
+          />
+        ),
+      },
+      {
+        pathname: "https://www.facebook.com/shubham.matoliya.1",
+        icon: (
+          <FaFacebookF
+            className={`w-4 h-4 ${
+              dark ? "text-blue-700" : "text-blue-600"
+            } hover:text-pink-700 `}
+          />
+        ),
+      },
+    ],
+    [dark],
+  );
   return (
     <div
       className={[
         "w-1/3",
+        "h-fit",
+        "pb-5",
         "rounded-2xl",
         "drop-shadow-sm",
-        "static",
         "flex",
         "justify-center",
         "align-middle",
@@ -44,7 +90,7 @@ export default function Sidebar() {
       >
         <img src="src/assets/profile-pic.png" className="w-[96%]" />
       </div>
-      <div className="mt-28 w-[90%] flex justify-center flex-col items-center">
+      <div className="mt-36 h-full flex w-full justify-center flex-col items-center">
         <h1
           className={[
             "text-3xl",
@@ -68,58 +114,20 @@ export default function Sidebar() {
         >
           Full Stack developer
         </h3>
-        <div className="flex justify-center align-middle  gap-3 mt-8">
-          <Link to={"/"}>
-            <Button
-              buttonType="social"
-              background={dark ? "bg-[#1D1D1D]" : "bg-[#f2f5f5]"}
-            >
-              <FaLinkedinIn
-                className={`w-4 h-4 ${
-                  dark ? "text-blue-700" : "text-blue-600"
-                }  `}
-              />
-            </Button>
-          </Link>
-          <Link to={"/"}>
-            <Button
-              buttonType="social"
-              background={dark ? "bg-[#1D1D1D]" : "bg-[#f2f5f5]"}
-            >
-              <FaXTwitter
-                className={` w-4 h-4 ${
-                  dark ? "text-gray-100" : "text-gray-900"
-                } `}
-              />
-            </Button>
-          </Link>
-          <Link to={"/"}>
-            <Button
-              buttonType="social"
-              background={dark ? "bg-[#1D1D1D]" : "bg-[#f2f5f5]"}
-            >
-              <FiGithub
-                className={`w-4 h-4 ${
-                  dark ? "text-gray-100" : "text-gray-900"
-                }  `}
-              />
-            </Button>
-          </Link>
-          <Link to={"/"}>
-            <Button
-              buttonType="social"
-              background={dark ? "bg-[#1D1D1D]" : "bg-[#f2f5f5]"}
-            >
-              <FaFacebookF
-                className={`w-4 h-4 ${
-                  dark ? "text-blue-700" : "text-blue-600"
-                }  `}
-              />
-            </Button>
-          </Link>
+        <div className="flex justify-center align-middle  gap-3 mt-4">
+          {socialButtons.map(({ pathname, icon }) => (
+            <a href={pathname} target="_blank">
+              <Button
+                buttonType="social"
+                background={dark ? "bg-[#1D1D1D]" : "bg-[#f2f5f5]"}
+              >
+                {icon}
+              </Button>
+            </a>
+          ))}
         </div>
         <ul
-          className={`w-[90%] mt-12 ${
+          className={` mt-8 ${
             dark ? "bg-[#1D1D1D]" : "bg-[#f2f5f5]"
           } pb-5 px-5 rounded-lg`}
         >

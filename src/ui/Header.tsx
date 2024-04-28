@@ -8,12 +8,12 @@ import { ThemeContext } from "../Context/ThemeContext";
 export default function Header() {
   const { dark, toggleTheme } = useContext(ThemeContext);
   return (
-    <header className="flex items-center justify-between ">
+    <header className="w-full flex items-center justify-between ">
       <Link to={"/"}>
         <img src={NameLogo} style={{ height: "8rem" }} />
       </Link>
       <button
-        className="flex items-center justify-center gap-2 mr-32 rounded-full  p-1 hover:bg-[#dd2455] hover:text-white"
+        className="justify-center gap-2 flex items-center mr-32 rounded-full  p-1 hover:bg-[#dd2455] hover:text-white"
         onClick={toggleTheme}
       >
         {dark ? (

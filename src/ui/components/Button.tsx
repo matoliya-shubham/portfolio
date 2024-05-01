@@ -17,19 +17,19 @@ export default function Button({
   let buttonClass = "";
   switch (buttonType) {
     case "social": {
-      buttonClass = `p-3 rounded-md ${background || ""}`;
+      buttonClass = `p-3 tab:p-2 h-fit rounded-md ${background || ""}`;
       break;
     }
     case "navButton": {
-      buttonClass = `py-4 w-[100%] justify-center flex items-center flex-col gap-1 rounded-xl 
+      buttonClass = `py-4 w-[100%] justify-center flex items-center flex-col gap-1 rounded-xl tab:py-3 tab:text-sm
       ${isActive ? (dark ? "active-dark" : "active-light") : ""}
       ${dark ? "hover-dark" : "hover-light"}`;
       break;
     }
     case "download": {
-      buttonClass = `py-3 px-10 mt-5 ${
+      buttonClass = `py-3 px-10 mt-5 tab:py-2 tab:px-8 ${
         background || ""
-      } flex justify-center gap-3 bg-gradient-to-r from-pink-600 to-orange-600 text-white rounded-2xl text-xl`;
+      } flex justify-center items-center gap-3 bg-gradient-to-r from-pink-600 to-orange-600 text-white rounded-2xl text-xl tab:text-md lg:text-lg`;
       break;
     }
     default:

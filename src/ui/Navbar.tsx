@@ -14,37 +14,37 @@ export default function Navbar() {
     {
       text: "Home",
       path: "/",
-      icon: <TiHomeOutline className="w-6 h-6" />,
+      icon: <TiHomeOutline className="tab:h-5 tab:w-5 h-6 w-6" />,
     },
     {
       text: "Resume",
       path: "/resume",
-      icon: <TiDocumentText className="w-6 h-6" />,
+      icon: <TiDocumentText className="tab:h-5 tab:w-5 h-6 w-6" />,
     },
     {
       text: "Work",
       path: "/work",
-      icon: <MdWorkHistory className="w-6 h-6" />,
+      icon: <MdWorkHistory className="tab:h-5 tab:w-5 h-6 w-6" />,
     },
     {
       text: "Blog",
       path: "/portfolio",
-      icon: <FaBlogger className="w-6 h-6" />,
+      icon: <FaBlogger className="tab:h-5 tab:w-5 h-6 w-6" />,
     },
     {
       text: "Contact",
       path: "/contact",
-      icon: <RiContactsBookLine className="w-6 h-6" />,
+      icon: <RiContactsBookLine className="tab:h-5 tab:w-5 h-6 w-6" />,
     },
   ];
   return (
     <div
-      className={`w-[70%] h-32 p-5 gap-5 ${
+      className={`h-32 w-[70%] gap-5 p-5 lg:w-[90%] ${
         dark ? "bg-black" : "bg-white"
-      }  rounded-lg flex justify-center items-center shadow-sm`}
+      }  flex items-center justify-center rounded-lg shadow-sm md:hidden`}
     >
       {navButtons.map(({ path, text, icon }) => (
-        <NavLink to={path} className={"w-[15%]"} preventScrollReset={true}>
+        <NavLink to={path} className={"w-[20%]"} preventScrollReset={true}>
           {({ isActive }) => (
             <Button isActive={isActive} buttonType="navButton">
               {icon}

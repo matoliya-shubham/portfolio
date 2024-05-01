@@ -20,7 +20,7 @@ export default function Sidebar() {
         pathname: "https://www.linkedin.com/in/shubham-matoliya/",
         icon: (
           <FaLinkedinIn
-            className={`w-4 h-4 ${
+            className={`h-4 w-4 ${
               dark ? "text-blue-700" : "text-blue-600"
             } hover:text-pink-700 `}
           />
@@ -30,7 +30,7 @@ export default function Sidebar() {
         pathname: "https://twitter.com/Shubhammatoliy4",
         icon: (
           <FaXTwitter
-            className={` w-4 h-4 ${
+            className={` h-4 w-4 ${
               dark ? "text-gray-100" : "text-gray-900"
             } hover:text-pink-700`}
           />
@@ -40,7 +40,7 @@ export default function Sidebar() {
         pathname: "https://github.com/matoliya-shubham",
         icon: (
           <FiGithub
-            className={`w-4 h-4 ${
+            className={`h-4 w-4 ${
               dark ? "text-gray-100" : "text-gray-900"
             } hover:text-pink-700 `}
           />
@@ -50,7 +50,7 @@ export default function Sidebar() {
         pathname: "https://www.facebook.com/shubham.matoliya.1",
         icon: (
           <FaFacebookF
-            className={`w-4 h-4 ${
+            className={`h-4 w-4 ${
               dark ? "text-blue-700" : "text-blue-600"
             } hover:text-pink-700 `}
           />
@@ -61,60 +61,74 @@ export default function Sidebar() {
   );
   return (
     <div
-      className={[
-        "w-1/3",
-        "h-fit",
-        "pb-5",
-        "rounded-2xl",
-        "drop-shadow-sm",
-        "flex",
-        "justify-center",
-        "align-middle",
-        dark ? "bg-black" : "bg-white",
-      ].join(" ")}
+      className={`
+        tab:top-24 
+        top-36
+        flex
+        h-full
+        w-1/3
+        flex-col 
+        items-center
+        justify-start 
+        rounded-2xl 
+        pb-5 
+        drop-shadow-sm 
+        md:w-full 
+        min-[769px]:sticky
+        lg:top-28
+        ${dark ? "bg-black" : "bg-white"}
+      `}
     >
       <div
-        className={[
-          "absolute",
-          "w-3/5",
-          "h-60",
-          "top-[-7.5rem]",
-          "left-[20%]",
-          "rounded-xl",
-          "flex",
-          "justify-center",
+        className={`
+        tab:w-[70%] 
+        tab:h-40 
+        tab:-mt-20
+        -mt-32
+        flex
+        h-64 
+        w-[65%] 
+        justify-center 
+        rounded-xl 
+        md:w-[35%] 
+        lg:-mt-24 
+        lg:h-48 
+        ${
           dark
             ? "bg-gradient-to-r from-[#543646] to-[#1f022f]"
-            : "bg-gradient-to-r from-[#d3cce3] to-[#e9e4f0]",
-        ].join(" ")}
+            : "bg-gradient-to-r from-[#d3cce3] to-[#e9e4f0]"
+        }
+        `}
       >
-        <img src="src/assets/profile-pic.png" className="w-[96%]" />
+        <img src="src/assets/profile-pic.png" className=" drop-shadow-lg " />
       </div>
-      <div className="mt-36 h-full flex w-full justify-center flex-col items-center">
+      <div className="mt-6 flex h-fit w-full flex-col items-center justify-start ">
         <h1
-          className={[
-            "text-3xl",
-            "text-center",
-            "font-bold",
-            dark ? "text-gray-200" : "text-gray-600",
-          ].join(" ")}
+          className={`
+            tab:text-2xl
+            text-center
+            text-3xl
+            font-bold
+            lg:text-2xl
+            ${dark ? "text-gray-200" : "text-gray-600"}
+          `}
         >
           Shubham Matoliya
         </h1>
         <h3
           className={[
-            "text-md",
+            "",
             "mt-2",
             "text-gray-400",
             "inline-block",
             dark
-              ? " py-1  inline-block px-3 bg-[#1D1D1D] rounded-md"
+              ? " inline-block  rounded-md bg-[#1D1D1D] px-3 py-1"
               : "text-lg ",
           ].join(" ")}
         >
           Full Stack developer
         </h3>
-        <div className="flex justify-center align-middle  gap-3 mt-4">
+        <div className="mt-4 flex justify-center gap-3 align-middle">
           {socialButtons.map(({ pathname, icon }) => (
             <a href={pathname} target="_blank">
               <Button
@@ -129,83 +143,92 @@ export default function Sidebar() {
         <ul
           className={` mt-8 ${
             dark ? "bg-[#1D1D1D]" : "bg-[#f2f5f5]"
-          } pb-5 px-5 rounded-lg`}
+          } max-h-screen w-[85%] rounded-lg px-5 pb-10`}
         >
-          <li className="pt-5 pb-3 border-b flex justify-start gap-3 border-gray-500">
+          <li className="flex justify-start gap-3 border-b border-gray-500 pb-3 pt-5">
             <Button
               buttonType="social"
               background={dark ? "bg-black" : "bg-white"}
             >
-              <IoIosPhonePortrait className={`w-6 h-6 text-pink-600 `} />
-            </Button>
-            <div>
-              <p className="text-sm text-gray-500">Phone</p>
-              <input
-                type="tel"
-                readOnly
-                className={`text-md ${
-                  dark ? "text-white" : "text-gray-900"
-                }  bg-transparent border-none outline-none`}
-                value={"+91-8952833364"}
+              <IoIosPhonePortrait
+                className={`tab:h-5 tab:w-5 h-6 w-6  text-pink-600`}
               />
+            </Button>
+            <div className="w-[80%] lg:w-[70%]">
+              <p className="text-sm text-gray-500">Phone</p>
+              <a
+                href="https://wa.me/8952833364"
+                target="_blank"
+                className={`tab:text-sm break-words md:text-lg ${
+                  dark ? "text-white" : "text-gray-900"
+                }  border-none bg-transparent outline-none`}
+              >
+                +91-8952833364
+              </a>
             </div>
           </li>
-          <li className="pt-5 pb-3 border-b flex justify-start gap-3 border-gray-500">
+          <li className="flex justify-start gap-3  border-b border-gray-500 pb-3 pt-5">
             <Button
               buttonType="social"
               background={dark ? "bg-black" : "bg-white"}
             >
-              <MdOutlineEmail className={`w-6 h-6 text-orange-600 `} />
+              <MdOutlineEmail
+                className={`tab:h-5 tab:w-5 h-6 w-6 text-orange-600 `}
+              />
             </Button>
-            <div>
+            <div className="tab:w-[70%] w-[80%] lg:w-[70%]">
               <p className="text-sm text-gray-500">Email</p>
-              <Link
-                className={`${dark ? "text-white" : "text-gray-900"} `}
-                to={{ pathname: "mailto:shubhammatoliya7@gmail.com" }}
+              <a
+                href="mailto:shubhammatoliya7@gmail.com"
+                className={`tab:text-sm md:text-lg ${dark ? "text-white " : "text-gray-900"} break-words  `}
               >
                 shubhammatoliya7@gmail.com
-              </Link>
+              </a>
             </div>
           </li>
-          <li className="pt-5 pb-3 border-b flex justify-start gap-3 border-gray-500">
+          <li className="flex justify-start gap-3 border-b border-gray-500 pb-3 pt-5">
             <Button
               buttonType="social"
               background={dark ? "bg-black" : "bg-white"}
             >
-              <FaLocationDot className={`w-6 h-6 text-blue-400 `} />
+              <FaLocationDot
+                className={`tab:h-5 tab:w-5 h-6 w-6 text-blue-400 `}
+              />
             </Button>
-            <div>
+            <div className="w-[80%] lg:w-[70%]">
               <p className="text-sm text-gray-500">Location</p>
-              <input
-                readOnly
-                className={`text-md ${
+              <p
+                className={`tab:text-sm break-words md:text-lg ${
                   dark ? "text-white" : "text-gray-900"
-                }  bg-transparent border-none outline-none`}
-                value={"Bangalore, India"}
-              />
+                }  border-none bg-transparent outline-none`}
+              >
+                Bangalore, India
+              </p>
             </div>
           </li>
-          <li className="pt-5 pb-3 border-b flex justify-start gap-3 border-gray-500">
+          <li className="flex justify-start gap-3 border-b border-gray-500 pb-3 pt-5">
             <Button
               buttonType="social"
               background={dark ? "bg-black" : "bg-white"}
             >
-              <FaCalendarAlt className={`w-6 h-6 text-purple-400 `} />
-            </Button>
-            <div>
-              <p className="text-sm text-gray-500">Birthday</p>
-              <input
-                readOnly
-                className={`text-md ${
-                  dark ? "text-white" : "text-gray-900"
-                }  bg-transparent border-none outline-none`}
-                value={"May 27, 1990"}
+              <FaCalendarAlt
+                className={`tab:h-5 tab:w-5 h-6 w-6 text-purple-400 `}
               />
+            </Button>
+            <div className="w-[80%] lg:w-[70%]">
+              <p className="text-sm text-gray-500">Birthday</p>
+              <p
+                className={`tab:text-sm break-words md:text-lg ${
+                  dark ? "text-white" : "text-gray-900"
+                }  border-none bg-transparent outline-none`}
+              >
+                May 27, 1990
+              </p>
             </div>
           </li>
         </ul>
         <Button buttonType="download">
-          <FaDownload className="w-6 h-6 " />
+          <FaDownload className="tab:h-5 tab:w-5 h-6 w-6" />
           <span>Download CV</span>
         </Button>
       </div>

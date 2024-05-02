@@ -97,7 +97,7 @@ export default function Sidebar() {
         ${
           dark
             ? "bg-gradient-to-tr from-[#381b2a] via-[#640c3b] to-[#c00769]"
-            : "bg-gradient-to-tr from-[#7b4ea6] via-[#c07fde] to-[#66018b]"
+            : "bg-gradient-to-r from-pink-400 via-pink-200 to-pink-400"
         }
         `}
       >

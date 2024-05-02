@@ -1,12 +1,13 @@
-import { Link, Outlet } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import { ThemeContext } from "../Context/ThemeContext";
+import useTheme from "../hooks/useTheme";
 
 export default function AppLayout() {
-  const { dark } = useContext(ThemeContext);
+  const { dark } = useTheme();
+
   useEffect(() => {
     if (dark) {
       document.body.classList.add("bg-dark");
@@ -15,42 +16,33 @@ export default function AppLayout() {
       document.body.classList.add("bg-light");
     }
 
+    // if (isSidebarOpen) {
+    //   document.body.classList.add("overflow-hidden");
+    // } else {
+    //   document.body.classList.remove("overflow-hidden");
+    //   document.body.classList.add("overflow-auto");
+    // }
     // Cleanup function to remove the class when the component unmounts
     return () => {
       document.body.classList.remove("bg-dark", "bg-light");
     };
   }, [dark]);
 
-  //   return (
-  //     <div className="">
-  //       <Header />
-
-  //       <div className="body mt-[150px] flex pb-28">
-  //         <Sidebar />
-
-  //         <div className="right flex h-full flex-1 flex-col bg-blue-300">
-  //           <Navbar />
-
-  //           <div className="content max-h-full flex-1 overflow-y-auto">
-  //             <Outlet />
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-
   return (
-    <div className="tab:gap-24 flex max-h-fit w-screen flex-col items-center gap-36 pb-10 lg:gap-28 ">
+    <>
       <Header />
-      <div className="flex w-[90vw] flex-1  justify-between gap-8  md:flex-col">
+      <div className="mt-48 flex w-full flex-1 flex-col items-center justify-between gap-8 pb-10 sm:mt-56 md:mt-44  md:flex-row md:items-start  md:gap-4 md:px-4">
         <Sidebar />
-        <div className="flex flex-1 flex-col items-center gap-6  rounded-2xl  drop-shadow-sm md:w-full">
+        <div className="flex w-full flex-col items-center gap-6 rounded-2xl   drop-shadow-sm xs:w-[95%] sm:w-[90%]">
           <Navbar />
-          <div className=" w-full flex-grow  rounded-lg bg-slate-100 ">
+          <div
+            className="w-full flex-grow rounded-lg bg-slate-100 "
+            id="content-block"
+          >
             <Outlet />
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -7,44 +7,60 @@ import { FaBlogger } from "react-icons/fa";
 import { RiContactsBookLine } from "react-icons/ri";
 import { useContext } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
+import useTheme from "../hooks/useTheme";
 
 export default function Navbar() {
-  const { dark } = useContext(ThemeContext);
+  const { dark } = useTheme();
   const navButtons = [
     {
       text: "Home",
       path: "/",
-      icon: <TiHomeOutline className="tab:h-5 tab:w-5 h-6 w-6" />,
+      icon: (
+        <TiHomeOutline className="h-6 w-6 md:h-5 md:w-5 min-[1100px]:h-6 min-[1100px]:w-6" />
+      ),
     },
     {
       text: "Resume",
       path: "/resume",
-      icon: <TiDocumentText className="tab:h-5 tab:w-5 h-6 w-6" />,
+      icon: (
+        <TiDocumentText className="h-6 w-6 md:h-5 md:w-5 min-[1100px]:h-6 min-[1100px]:w-6" />
+      ),
     },
     {
       text: "Work",
       path: "/work",
-      icon: <MdWorkHistory className="tab:h-5 tab:w-5 h-6 w-6" />,
+      icon: (
+        <MdWorkHistory className="h-6 w-6 md:h-5 md:w-5 min-[1100px]:h-6 min-[1100px]:w-6" />
+      ),
     },
     {
       text: "Blog",
       path: "/portfolio",
-      icon: <FaBlogger className="tab:h-5 tab:w-5 h-6 w-6" />,
+      icon: (
+        <FaBlogger className="h-6 w-6 md:h-5 md:w-5 min-[1100px]:h-6 min-[1100px]:w-6" />
+      ),
     },
     {
       text: "Contact",
       path: "/contact",
-      icon: <RiContactsBookLine className="tab:h-5 tab:w-5 h-6 w-6" />,
+      icon: (
+        <RiContactsBookLine className="h-6 w-6 md:h-5 md:w-5 min-[1100px]:h-6 min-[1100px]:w-6" />
+      ),
     },
   ];
   return (
     <div
-      className={`h-32 w-[70%] gap-5 p-5 lg:w-[90%] ${
+      className={` h-32 w-[90%] gap-3 p-5 min-[900px]:w-[80%] lg:w-[75%] min-[1100px]:gap-6 min-[1200px]:w-[70%] xl:w-[60%] ${
         dark ? "bg-black" : "bg-white"
-      }  flex items-center justify-center rounded-lg shadow-sm md:hidden`}
+      }  hidden items-center justify-center rounded-lg shadow-sm md:flex `}
     >
       {navButtons.map(({ path, text, icon }) => (
-        <NavLink to={path} className={"w-[20%]"} preventScrollReset={true}>
+        <NavLink
+          to={path}
+          className={"w-[30%]"}
+          preventScrollReset={true}
+          key={path}
+        >
           {({ isActive }) => (
             <Button isActive={isActive} buttonType="navButton">
               {icon}

@@ -8,7 +8,6 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const ThemeContextProvider = ({ children }: React.PropsWithChildren) => {
   const [dark, setDark] = useState<boolean>(true);
-
   const toggleTheme = () => {
     setDark((dark) => !dark);
   };

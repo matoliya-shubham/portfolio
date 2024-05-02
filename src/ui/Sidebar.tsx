@@ -1,6 +1,3 @@
-import { Link } from "react-router-dom";
-import { useContext, useMemo } from "react";
-import { ThemeContext } from "../Context/ThemeContext";
 import Button from "./components/Button";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -11,9 +8,11 @@ import { MdOutlineEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
+import useTheme from "../hooks/useTheme";
+import { useMemo } from "react";
 
 export default function Sidebar() {
-  const { dark } = useContext(ThemeContext);
+  const { dark } = useTheme();
   const socialButtons = useMemo(
     () => [
       {

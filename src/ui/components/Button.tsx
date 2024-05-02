@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ThemeContext } from "../../Context/ThemeContext";
 import useTheme from "../../hooks/useTheme";
 
 type ButtonProp = {

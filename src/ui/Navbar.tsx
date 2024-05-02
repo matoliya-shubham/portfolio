@@ -5,8 +5,6 @@ import { TiDocumentText } from "react-icons/ti";
 import { MdWorkHistory } from "react-icons/md";
 import { FaBlogger } from "react-icons/fa";
 import { RiContactsBookLine } from "react-icons/ri";
-import { useContext } from "react";
-import { ThemeContext } from "../Context/ThemeContext";
 import useTheme from "../hooks/useTheme";
 
 export default function Navbar() {

@@ -8,7 +8,7 @@ export default function Contact() {
       >
         {Array(10)
           .fill(null)
-          .map((el, i) => (
+          .map((_, i) => (
             <div
               key={i + 1}
               className="h-48 w-1/2 border border-red-600 bg-slate-400"

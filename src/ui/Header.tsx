@@ -58,7 +58,7 @@ export default function Header() {
   const [y, setY] = useState(window.scrollY);
 
   const handleNavigation = useCallback(
-    (e) => {
+    (e: any) => {
       const window = e.currentTarget;
       if (window.scrollY == 0) {
         const nav = document.getElementById("navbar");

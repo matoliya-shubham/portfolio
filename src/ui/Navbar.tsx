@@ -48,14 +48,14 @@ export default function Navbar() {
   ];
   return (
     <div
-      className={` h-32 w-[90%] gap-3 p-5 min-[900px]:w-[80%] lg:w-[75%] min-[1100px]:gap-6 min-[1200px]:w-[70%] xl:w-[60%] ${
+      className={` h-32 w-[90%] gap-3 p-5 min-[900px]:w-[80%] lg:w-[75%] min-[1100px]:gap-6 min-[1200px]:w-[70%] xl:w-[60%] min-[1380px]:w-[65%] min-[1380px]:gap-8  min-[1480px]:w-[60%] min-[1480px]:gap-8 min-[1600px]:w-[55%] min-[1600px]:gap-12 min-[1700px]:gap-14 min-[1800px]:gap-12 ${
         dark ? "bg-black" : "bg-white"
       }  hidden items-center justify-center rounded-lg shadow-sm md:flex `}
     >
       {navButtons.map(({ path, text, icon }) => (
         <NavLink
           to={path}
-          className={"w-[30%]"}
+          className={"w-[30%] "}
           preventScrollReset={true}
           key={path}
         >

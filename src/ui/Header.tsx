@@ -60,7 +60,7 @@ export default function Header() {
   const handleNavigation = useCallback(
     (e: any) => {
       const window = e.currentTarget;
-      if (window.scrollY == 0) {
+      if (window.scrollY <= 25) {
         const nav = document.getElementById("navbar");
         nav?.classList.remove("bg-gray-950", "bg-white");
         nav?.classList.add("bg-transparent");

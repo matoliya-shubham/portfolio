@@ -8,6 +8,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
+import profilePic from "../assets/profile-pic.png";
 import useTheme from "../hooks/useTheme";
 import { useMemo } from "react";
 
@@ -100,10 +101,7 @@ export default function Sidebar() {
         }
         `}
       >
-        <img
-          src="src/assets/profile-pic.png"
-          className="w-[95%] drop-shadow-lg"
-        />
+        <img src={profilePic} className="w-[95%] drop-shadow-lg" />
       </div>
       <div className="mt-6 flex h-fit w-full flex-col items-center justify-start ">
         <h1

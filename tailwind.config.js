@@ -28,8 +28,8 @@ export default {
     },
     extend: {
       backgroundImage: {
-        light: "url('src/assets/background-light.jpeg')",
-        dark: "url('src/assets/background-dark.jpeg')",
+        light: "url('/background-light.jpeg')",
+        dark: "url('/background-dark.jpeg')",
       },
       margin: 0,
       padding: 0,
